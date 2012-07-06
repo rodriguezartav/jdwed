@@ -14,7 +14,7 @@ class Header extends Spine.Controller
     subnavName = target.attr "data-subnav"
     subnav = @el.find(".#{subnavName}") if subnavName
     subnav.show()
-    setTimeout 3000 , =>
+    setTimeout 3000 , (subnav) =>
       subnav.hide()
 
 module.exports = Header

@@ -2021,7 +2021,17 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .infoGrid .item h2 { color: #3c4a25; margin: 0px 40px; margin-top: 30px;
 }
+.infoGrid .item h3 { color: #3c4a25; margin: 0px 40px; margin-top: 0px; font-size: 17px;
+}
 .infoGrid .item p { color: #3c4a25; margin: 10px 35px; padding-bottom: 40px; padding-top: 0; font-size: 16px; font-weight: 200; line-height: 1.75; word-spacing: -1px;
+}
+.textGrid .item { -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; padding-top: 30px; background-color: #f7f9fb;
+}
+.textGrid h2 { color: #8fae5a; font-size: 25px; margin: 0px 40px; margin-top: 20px;
+}
+.textGrid h3 { color: #3c4a25; margin: 0px 40px; margin-top: 0px; font-size: 17px;
+}
+.textGrid p { color: #3c4a25; margin: 10px 35px; padding-bottom: 40px; padding-top: 0; font-size: 16px; font-weight: 200; line-height: 1.75; word-spacing: -1px;
 }
 .info h1 { color: #8fae5a; line-height: 50px;
 }
@@ -2031,11 +2041,11 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .splash { margin-bottom: 20px;
 }
-.hero-unit h3 { font-weight: 200;
-}
 body { padding-bottom: 50px;
 }
 body a { color: #8fae5a;
+}
+body h2 { color: #8fae5a;
 }
 .container { max-width: 960px;
 }
