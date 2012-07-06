@@ -1,0 +1,137 @@
+script
+  window.page = 'App'
+
+#app
+  .container
+    .row-fluid
+      br
+      h1 CostaRica News
+    hr
+
+    br
+
+    #demo
+      .row.crnPost
+        span
+          h5.badge.badge-info 1
+
+        span
+          h5.badge.badge-success
+            i.icon-ok 
+            span  66
+        span
+          h3 Meteorite misses earth by 1000miles
+          h6 testafero.com by <a>@rodriguezartav</a> 2 days ago
+
+   
+   
+      .row.crnPost
+
+        span
+          h5.badge.badge-info 2
+
+
+        span
+          h5.badge.badge-success
+            i.icon-ok
+            span  145
+
+        span
+          h3 Ask CRN: How do I build an App
+          h6 nytimes.com by <a>@trm_olam</a> 1 hour ago
+
+
+      .row.crnPost
+        span
+          h5.badge 3
+
+        span
+          h5.badge.badge-success
+            i.icon-ok  
+            span  12
+              
+        span
+          h3 I launched the next amazing app
+          h6 nextapp.com by <a>@fredwilson</a> 1 week ago
+
+
+    #demoInfo
+      br
+      br
+
+      .row-fluid
+        .span4
+          h2 We call it CRNews
+          p It's an app where people can post links to their blogs or links that they found on the internet
+    
+        .span4
+          h2 How to Publish
+          p By Tweeting with a link and hashTag #CRN, we'll pull them realtime from Twitter;
+          p By posting directly on CRN - CostaRicaNews Web App
+  
+    
+        .span4
+          h2 For the Tech Community
+          p CRN is inspired in the <a href="news.ycombinator.com">Hacker News Movement</a>, even if it is of interest to the Tech Community it's topics are related to science, humanities, law and art;
+    
+    hr
+    #works
+      h1 How does it work?
+    
+      .row-fluid   
+        .span6.stepItem.row-fluid
+          .span2
+            h5.badge.badge-info 1
+
+          .span10
+            h2 Post a Link
+            p They can do it in Tweeter or in CRN Web App<br/> I can also imagine being able to write it in CRN
+
+        .span6.stepItem
+          .span2
+            h5.badge.badge-info 2
+
+          .span10
+            h2 Click & Read Links
+            p Click opens in a new tab and opens up a popover, where people can vote or comment when they return
+
+
+        .demo
+          .row.crnPost
+             span
+               h5.badge.badge-info 1
+
+             span
+               h5.badge.badge-success
+                 i.icon-ok 
+                 span  66
+             span.popopen(rel="popover", data-content='Here goes the buttons to vote, comment, info on profile, etc' , data-original-title="Comming Soon")
+               h3 Meteorite misses earth by 1000miles
+               h6 testafero.com by <a>@rodriguezartav</a> 2 days ago
+
+
+    
+         .row-fluid   
+           .span6.stepItem.row-fluid
+             .span2
+               h5.badge.badge-info 3
+
+             .span10
+               h2 Login with Tweeter
+               p In order to vote, comment and complete a Profile people must " Connect " with Tweeter; We'll remember them automatically
+             
+               img(src="https://dev.twitter.com/sites/default/files/images_documentation/desktop-signed-out_0.png")
+              
+
+           .span6.stepItem
+             .span2
+               h5.badge.badge-info 4
+
+             .span10
+               h2 Comments , Stats & Profiles
+               p Everybody can read comments on Posts, Profiles of people that Posted and even Stats; For example you could see which posts a person of interest upvoted
+               
+               br
+               .label.label-warning Comming Soon
+
+

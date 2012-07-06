@@ -1,0 +1,117 @@
+.header{
+
+  .top{
+    padding-top: 20px;
+    .logo{
+      display: inline-block;
+      h3{
+        color: @green;
+        font-size: 34px;
+        line-height: 60px;
+      }
+    }
+    ul.secondaryLinks{
+      display: inline-block;
+      li{
+        display: inline-block;
+        margin-right: 8px;
+        a{
+        }
+        &.divider{
+          margin-left: 8px;
+          border-left: 1px solid @blue;
+        }
+      }
+    }
+  }  
+
+
+  .links{
+    margin-bottom: 10px;
+    
+    .subnav{
+      margin: 5px 0px;
+      .border-radius(3px);
+      background-color: lighten(#ddd,5);
+      opacity: 0.7;
+      border: 1px dashed #999;
+      padding: 10px 0px;
+      z-index: 1;
+      overflow:hidden;
+      display: none;
+      .wrapper{
+        >a{
+          overflow: hidden;
+          text-decoration: none;
+          text-align: center;
+          width: 158px;
+          padding-top: 10px;
+          i{
+            font-size: 70px;
+          }
+          h2{
+            margin-top: 10px;
+            font-size: 30px;
+          }
+        }
+        
+      }
+    }
+    
+    ul.primaryLinks{
+      z-index: 0;
+      margin: 0px;
+      position:relative;
+      .submenu{
+        position: absolute;
+        width: 960px;
+        height: 90px;
+        left: 0px;
+        top: 100px;
+        margin-bottom: 20px;
+      }
+      
+      li.link{
+        overflow: hidden;
+        display: inline-block;
+        height: 92px;
+        width: 158px;
+        background-color: @green;
+        position: relative;
+        margin: 0px 0px 0px 6px;
+        .border-radius(8px);
+        .box-shadow(~"0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1)");
+        &:first-child{
+          margin: 0px;
+        }
+        a{
+          position: absolute;
+          color: #fff;
+          top: 10px;
+          left: 10px;
+          text-decoration: none;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 200;
+           i{
+            position: absolute;
+            top: 58px;
+            left: -9px;
+            font-size: 20px;
+           }
+         }   
+         i{
+           position: absolute;
+           bottom: 4px;
+           right: 0px;
+           font-size: 80px;
+           color: #fff;
+         }         
+      }
+    }
+  }
+
+  
+}
+
+

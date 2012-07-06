@@ -1,0 +1,100 @@
+!!! 5
+//if lt IE 7
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+  
+//if IE 7
+  <html class="no-js lt-ie9 lt-ie8" lang="en">
+  
+//if IE 8
+  <html class="no-js lt-ie9" lang="en">
+
+html(lang="en")
+  
+  head
+    meta(charset='utf-8')
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+    link(rel='stylesheet', href='/application.css', type='text/css', charset='utf-8')
+
+    title Jungle Dynamics
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    //link(rel='icon', type='image/ico', href='favicon.ico')
+
+    //if lt IE 9
+      <link rel="stylesheet" href="src/stylesheets/ie.css">
+    
+    //if lt IE 9
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  
+    
+    script(src='/application.js', type='text/javascript', charset='utf-8')
+      
+    script(type='text/javascript', charset='utf-8')
+      var jQuery  = require("jqueryify");
+      var exports = this;
+      jQuery(function(){
+        var App = require("index");
+        exports.app = new App({el: $("body")});      
+      });
+
+  body
+    .navbar.header
+      .navbar-inner
+        .container.top
+          .logo
+            h3 Jungle Dynamics
+          ul.secondaryLinks.pull-right
+            li
+              a sdsds
+            li
+              a sdsds
+            li.divider
+            li
+              a.btn.btn-success sdsds
+            li
+              a.btn.btn-success sdsds
+        
+        .container.links           
+          ul.primaryLinks
+            li.dropdown.link
+              a.dropdown-toggle(data-toggle="dropdown",href="/") Inicio
+              i.icon-bolt
+          
+            li.dropdown.link(data-subnav="hackaday")
+              a Hack-a-Day
+                i.icon-caret-down
+              i.icon-tasks
+            
+            li.dropdown.link
+              a.dropdown-toggle(data-toggle="dropdown",href="http://crnews.jungledynamics.com") CRNews
+                i.icon-caret-down
+              i.icon-globe
+          
+            li.dropdown.link
+              a.dropdown-toggle(data-toggle="dropdown",href="/about") About Us
+                i.icon-caret-down
+              i.icon-mail
+          
+            li.dropdown.link
+              a.dropdown-toggle(data-toggle="dropdown",href="/contacto") Contacto
+                i.icon-caret-down
+              i.icon-mail
+
+          .subnav.hackaday
+            .row-fluid.wrapper
+              a.span3(href="/hack-a-day")
+                i.icon-ok
+                h2 Info
+              a.span3(href="/hack-a-day/preparese")
+                i.icon-ok
+                h2 Prepare
+              a.span3(href="/hack-a-day/app")
+                i.icon-ok
+                h2 App
+
+
+
+    != body
+    
+      
