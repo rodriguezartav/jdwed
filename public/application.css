@@ -1981,7 +1981,7 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .header .top .logo { display: inline-block;
 }
-.header .top .logo h3 { color: #8fae5a; font-size: 34px; line-height: 60px;
+.header .top .logo h3 { color: #8fae5a; font-size: 44px; line-height: 60px; font-weight: 500; margin-bottom: 10px; text-shadow: 0 1px 1px rgba(33, 33, 33, 0.1);
 }
 .header .top ul.secondaryLinks { display: inline-block;
 }
@@ -1991,13 +1991,23 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .header .links { margin-bottom: 10px;
 }
-.header .links .subnav { margin: 5px 0px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #eaeaea; opacity: 0.7; border: 1px dashed #999; padding: 10px 0px; z-index: 1; overflow: hidden; display: none;
+.header .links .subnav { margin: 5px 0px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: whiteSmoke; opacity: 0; border: 1px dashed #999; padding: 10px 0px; z-index: 1; height: 0px; display: none;
 }
-.header .links .subnav .wrapper > a { overflow: hidden; text-decoration: none; text-align: center; width: 158px; padding-top: 10px;
+.header .links .subnav.active { display: block; height: 40px; overflow: hidden;
 }
-.header .links .subnav .wrapper > a i { font-size: 70px;
+.header .links .subnav.visible { -webkit-transition: 0.45s ease-in-out opacity; -moz-transition: 0.45s ease-in-out opacity; -ms-transition: 0.45s ease-in-out opacity; -o-transition: 0.45s ease-in-out opacity; transition: 0.45s ease-in-out opacity; opacity: 0.7; height: auto;
 }
-.header .links .subnav .wrapper > a h2 { margin-top: 10px; font-size: 30px;
+.header .links .subnav .buttons :hover { color: #f89406;
+}
+.header .links .subnav .buttons > a { overflow: hidden; text-decoration: none; text-align: center; width: 158px; padding-top: 10px;
+}
+.header .links .subnav .buttons > a i { font-size: 70px;
+}
+.header .links .subnav .buttons > a h2 { margin-top: 10px; font-size: 30px;
+}
+.header .links .subnav .buttons > a :hover { color: #f89406;
+}
+.header .links .subnav .layout { padding: 0px 15px 15px 15px;
 }
 .header .links ul.primaryLinks { z-index: 0; margin: 0px; position: relative;
 }
@@ -2007,11 +2017,13 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .header .links ul.primaryLinks li.link:first-child { margin: 0px;
 }
+.header .links ul.primaryLinks li.link:hover i { color: #f89406;
+}
 .header .links ul.primaryLinks li.link a { position: absolute; color: #fff; top: 10px; left: 10px; text-decoration: none; cursor: pointer; font-size: 18px; font-weight: 200;
 }
 .header .links ul.primaryLinks li.link a i { position: absolute; top: 58px; left: -9px; font-size: 20px;
 }
-.header .links ul.primaryLinks li.link i { position: absolute; bottom: 4px; right: 0px; font-size: 80px; color: #fff;
+.header .links ul.primaryLinks li.link i { position: absolute; bottom: 3px; right: -25px; font-size: 88px; color: #fff;
 }
 .infoGrid .item { -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; padding-top: 30px; background-color: #f7f9fb;
 }
@@ -2046,6 +2058,8 @@ body { padding-bottom: 50px;
 body a { color: #8fae5a;
 }
 body h2 { color: #8fae5a;
+}
+body .green { color: #8fae5a;
 }
 .container { max-width: 960px;
 }

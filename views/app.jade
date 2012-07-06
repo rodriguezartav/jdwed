@@ -11,15 +11,14 @@ script
     br
 
     #demo
-      .row.crnPost
-        span
-          h5.badge.badge-info 1
+      .row-fluid
+        .span1
+          span.badge.badge-info 1
 
-        span
-          h5.badge.badge-success
+          span.badge.badge-success
             i.icon-ok 
             span  66
-        span
+        .span9
           h3 Meteorite misses earth by 1000miles
           h6 testafero.com by <a>@rodriguezartav</a> 2 days ago
 
@@ -27,30 +26,28 @@ script
    
       .row.crnPost
 
-        span
-          h5.badge.badge-info 2
+        .span1
+          span.badge.badge-info 2
 
-
-        span
-          h5.badge.badge-success
+          span.badge.badge-success
             i.icon-ok
             span  145
 
-        span
+        .span11
           h3 Ask CRN: How do I build an App
           h6 nytimes.com by <a>@trm_olam</a> 1 hour ago
 
 
       .row.crnPost
-        span
-          h5.badge 3
+        .span1
+          span.badge.badge-info 3
 
-        span
-          h5.badge.badge-success
+        
+          span.badge.badge-success
             i.icon-ok  
             span  12
               
-        span
+        .span11
           h3 I launched the next amazing app
           h6 nextapp.com by <a>@fredwilson</a> 1 week ago
 
@@ -59,29 +56,29 @@ script
       br
       br
 
-      .row-fluid
-        .span4
+      .row-fluid.textGrid
+        .span4.item
           h2 We call it CRNews
           p It's an app where people can post links to their blogs or links that they found on the internet
     
-        .span4
+        .span4.item
           h2 How to Publish
           p By Tweeting with a link and hashTag #CRN, we'll pull them realtime from Twitter;
           p By posting directly on CRN - CostaRicaNews Web App
   
     
-        .span4
+        .span4.item
           h2 For the Tech Community
           p CRN is inspired in the <a href="news.ycombinator.com">Hacker News Movement</a>, even if it is of interest to the Tech Community it's topics are related to science, humanities, law and art;
     
     hr
     #works
-      h1 How does it work?
+      h2 How does it work?
     
       .row-fluid   
         .span6.stepItem.row-fluid
           .span2
-            h5.badge.badge-info 1
+            span.badge.badge-info 1
 
           .span10
             h2 Post a Link
@@ -89,7 +86,7 @@ script
 
         .span6.stepItem
           .span2
-            h5.badge.badge-info 2
+            span.badge.badge-info 2
 
           .span10
             h2 Click & Read Links
@@ -98,14 +95,12 @@ script
 
         .demo
           .row.crnPost
-             span
-               h5.badge.badge-info 1
+               span.badge.badge-info 1
 
-             span
-               h5.badge.badge-success
+               span.badge.badge-success
                  i.icon-ok 
                  span  66
-             span.popopen(rel="popover", data-content='Here goes the buttons to vote, comment, info on profile, etc' , data-original-title="Comming Soon")
+             .span11.popopen(rel="popover", data-content='Here goes the buttons to vote, comment, info on profile, etc' , data-original-title="Comming Soon")
                h3 Meteorite misses earth by 1000miles
                h6 testafero.com by <a>@rodriguezartav</a> 2 days ago
 

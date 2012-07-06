@@ -6,8 +6,11 @@
       display: inline-block;
       h3{
         color: @green;
-        font-size: 34px;
+        font-size: 44px;
         line-height: 60px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        text-shadow: 0 1px 1px rgba(33,33,33,0.1);
       }
     }
     ul.secondaryLinks{
@@ -32,14 +35,27 @@
     .subnav{
       margin: 5px 0px;
       .border-radius(3px);
-      background-color: lighten(#ddd,5);
-      opacity: 0.7;
+      background-color: whiteSmoke;
+      opacity: 0;
       border: 1px dashed #999;
       padding: 10px 0px;
       z-index: 1;
-      overflow:hidden;
+      height:  0px;
       display: none;
-      .wrapper{
+      &.active{
+        display: block;
+        height: 40px;
+        overflow: hidden;
+      }
+      &.visible{
+        .transition(0.45s ease-in-out opacity);
+        opacity: 0.7;
+        height: auto;
+      }
+      .buttons{
+       :hover{
+          color: @orange;
+        }
         >a{
           overflow: hidden;
           text-decoration: none;
@@ -53,9 +69,19 @@
             margin-top: 10px;
             font-size: 30px;
           }
+        :hover{
+          color: @orange;
         }
+        }  
+      }
+      
+      .layout{
+        padding: 0px 15px 15px 15px;
+        
+        
         
       }
+      
     }
     
     ul.primaryLinks{
@@ -84,6 +110,11 @@
         &:first-child{
           margin: 0px;
         }
+        &:hover{
+          i{
+            color: @orange;
+          }
+        }
         a{
           position: absolute;
           color: #fff;
@@ -102,9 +133,9 @@
          }   
          i{
            position: absolute;
-           bottom: 4px;
-           right: 0px;
-           font-size: 80px;
+           bottom: 3px;
+           right: -25px;
+           font-size: 88px;
            color: #fff;
          }         
       }

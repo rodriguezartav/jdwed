@@ -57,9 +57,9 @@ html(lang="en")
         
         .container.links           
           ul.primaryLinks
-            li.dropdown.link
-              a.dropdown-toggle(data-toggle="dropdown",href="/") Inicio
-              i.icon-bolt
+            li.link
+              a.dropdown-toggle(href="/") Inicio
+              i.icon-bolt(style="font-size: 150px;top: -10px;right: -30px;")
           
             li.dropdown.link(data-subnav="hackaday")
               a Hack-a-Day
@@ -68,33 +68,89 @@ html(lang="en")
             
             li.dropdown.link
               a.dropdown-toggle(data-toggle="dropdown",href="http://crnews.jungledynamics.com") CRNews
-                i.icon-caret-down
               i.icon-globe
           
-            li.dropdown.link
-              a.dropdown-toggle(data-toggle="dropdown",href="/about") About Us
-                i.icon-caret-down
-              i.icon-mail
+            li.dropdown.link(data-subnav="contacto")
+              a.dropdown-toggle About Us
+              i.icon-map-marker
           
-            li.dropdown.link
-              a.dropdown-toggle(data-toggle="dropdown",href="/contacto") Contacto
-                i.icon-caret-down
-              i.icon-mail
+            li.dropdown.link(data-subnav="contacto")
+              a.dropdown-toggle Contacto
+              i.icon-envelope
 
           .subnav.hackaday
-            .row-fluid.wrapper
+            .row-fluid.buttons
               a.span3(href="/hack-a-day")
-                i.icon-ok
+                i.icon-book
                 h2 Info
               a.span3(href="/hack-a-day/preparese")
-                i.icon-ok
+                i.icon-beaker
                 h2 Prepare
               a.span3(href="/hack-a-day/app")
-                i.icon-ok
+                i.icon-th-list
                 h2 App
 
+
+          .subnav.contacto
+            .row-fluid.layout
+              .row-fluid
+                .span5
+                  form.form-horizontal
+                    fieldset
+                      legend A veces respondemos :)
+                      p
+                        small (todos los campos son requeridos)
+                        .control-group
+                          label.control-label(for="input01") Su Nombre
+                          .controls
+                            input.span12(type="text")
+                          
+                        .control-group
+                          label.control-label(for="input01") Su Email
+                          .controls
+                            input.span12(type="text")
+                        
+                        .control-group
+                          label.control-label(for="input01") Cuentenos
+                          .controls
+                            textarea.span12(type="text")
+
+                        a.btn.pull-right.btn-success Enviar
+                .span1
+                .span6
+                   h2 Jungle Dynamics Inc
+
+                   blockquote
+                     p
+                       | "Jungle Dynamics es una empresa dedicada a fomentar el emprendedurismo, la innovación, la transferencia de conocimiento y, sobre todo, la aplicación de estos para la ideación y ejecución de soluciones." 
+                   p Contacte a nuestros equipo
+                   
+                   blockquote
+                    p Roberto Rodriguez - roberto@jungledynamics.com
+                    p Arnoldo Mora - arnoldo@jungledynamics.com
+                    p Juan Muñoz - juan@jungledynamics.com
+
+
+            
 
 
     != body
     
+    
+#comments.container.
+    <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'jungledynamics'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
       

@@ -13,9 +13,11 @@ class Routes
     @app.get "/hack-a-day", (req,res) ->
       res.render "hackaday" 
       
-    @app.get "/hack-a-day/prepare", (req,res) ->
-      res.render "prepare"
+    @app.get "/hack-a-day/preparese", (req,res) ->
+      res.render "preparese"
    
+    @app.get "/hack-a-day/app", (req,res) ->
+      res.render "app"
 
 module.exports = Routes
    
