@@ -1999,21 +1999,21 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .header .links .subnav .buttons :hover { color: #f89406;
 }
-.header .links .subnav .buttons > a { overflow: hidden; text-decoration: none; text-align: center; width: 158px; padding-top: 10px;
+.header .links .subnav .buttons > a { overflow: hidden; text-decoration: none; text-align: center; width: 157px; padding-top: 10px;
 }
 .header .links .subnav .buttons > a i { font-size: 70px;
 }
-.header .links .subnav .buttons > a h2 { margin-top: 10px; font-size: 30px;
+.header .links .subnav .buttons > a h2 { margin-top: 10px; font-size: 20px;
 }
 .header .links .subnav .buttons > a :hover { color: #f89406;
 }
 .header .links .subnav .layout { padding: 0px 15px 15px 15px;
 }
-.header .links ul.primaryLinks { z-index: 0; margin: 0px; position: relative;
+.header .links ul.primaryLinks { z-index: 0; margin: 0px; position: relative; overflow: hidden;
 }
 .header .links ul.primaryLinks .submenu { position: absolute; width: 960px; height: 90px; left: 0px; top: 100px; margin-bottom: 20px;
 }
-.header .links ul.primaryLinks li.link { overflow: hidden; display: inline-block; height: 92px; width: 158px; background-color: #8fae5a; position: relative; margin: 0px 0px 0px 6px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1); -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1); box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+.header .links ul.primaryLinks li.link { overflow: hidden; display: inline-block; height: 92px; width: 150px; background-color: #8fae5a; position: relative; margin: 0px 0px 0px 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1); -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1); box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 .header .links ul.primaryLinks li.link:first-child { margin: 0px;
 }
@@ -2045,6 +2045,16 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .textGrid p { color: #3c4a25; margin: 10px 35px; padding-bottom: 40px; padding-top: 0; font-size: 16px; font-weight: 200; line-height: 1.75; word-spacing: -1px;
 }
+.horizontalGrid .item { -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; padding-top: 30px; background-color: #f7f9fb;
+}
+.horizontalGrid h2 { color: #8fae5a; font-size: 25px; margin: 0px 0px; margin-top: 20px;
+}
+.horizontalGrid h3 { color: #3c4a25; margin: 0px 40px; margin-top: 0px; font-size: 17px;
+}
+.horizontalGrid p { color: #3c4a25; margin: 10px 10px; padding-bottom: 10px; padding-top: 0; font-size: 16px; font-weight: 200; line-height: 1.75; word-spacing: -1px;
+}
+.horizontalGrid p.info { padding: 0px 20px; margin: 0px; font-size: 14px;
+}
 .info h1 { color: #8fae5a; line-height: 50px;
 }
 .info h2 { color: #8fae5a;
@@ -2056,6 +2066,8 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 body { padding-bottom: 50px;
 }
 body a { color: #8fae5a;
+}
+body a:hover { color: #f89406;
 }
 body h2 { color: #8fae5a;
 }
