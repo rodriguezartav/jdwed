@@ -23,10 +23,6 @@ class Header extends Spine.Controller
       subnav.addClass "active"
       setTimeout =>
         subnav.addClass "visible" , 1
-        setTimeout =>
-          console.log "no"
-
-
 
     else
       link = target.find("a").attr("href")

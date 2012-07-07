@@ -60,7 +60,7 @@ html(lang="en")
               i.icon-tasks
             
             li.dropdown.link
-              a.dropdown-toggle(data-toggle="dropdown",href="http://crnews.jungledynamics.com") CRNews
+              a.dropdown-toggle(data-subnav="apps") CRNews
               i.icon-globe
   
             li.dropdown.link(data-subnav="apps")
@@ -102,10 +102,10 @@ html(lang="en")
 
 
 
-          .subnav.contacto
+          .subnav.contacto.contactFormWrapper
             .row-fluid.layout
               .span5
-                form.form-horizontal
+                form.form-horizontal.contactForm(name="contactForm")
                   fieldset
                     legend A veces respondemos :)
                     p
@@ -113,19 +113,19 @@ html(lang="en")
                       .control-group
                         label.control-label(for="input01") Su Nombre
                         .controls
-                          input.span12(type="text")
+                          input.span12.txtName(type="text")
                         
                       .control-group
                         label.control-label(for="input01") Su Email
                         .controls
-                          input.span12(type="text")
+                          input.span12.txtEmail(type="email")
                       
                       .control-group
                         label.control-label(for="input01") Cuentenos
                         .controls
-                          textarea.span12(type="text")
+                          textarea.span12.txtMessage(type="text")
 
-                      a.btn.pull-right.btn-success Enviar
+                      button.btn.pull-right.btn-success(type="submit") Enviar
                       
                       
                       

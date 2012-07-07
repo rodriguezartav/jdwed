@@ -1,3 +1,4 @@
+Emailer = require("./emailer");
 
 
 class Routes
@@ -18,6 +19,13 @@ class Routes
    
     @app.get "/hack-a-day/app", (req,res) ->
       res.render "app"
+
+    @app.post "/form" , (req,res) ->
+      message = req.param 'message'
+      name = req.param 'name'
+      email = req.param 'email'
+      Emailer.sendMail( 'Nombre:' + name + ' Email: ' + email + ' Mensaje: ' + message )
+      res.send('{"response": "ok"}')
 
 module.exports = Routes
    

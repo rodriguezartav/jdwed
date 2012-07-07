@@ -1,0 +1,19 @@
+<div class="row-fluid layout">
+  <div class="span5">
+    <form class="form-horizontal">
+      <fieldset><legend>Gracias, Recibimos su mensaje</legend>
+      <p>Revisamos todos los mensajes personalmente y pronto le daremos una respuesta!</p>
+      <p class="green">Agradecemos su interes en Jungle Dynamics!</p>
+      </fieldset>
+    </form>
+  </div>
+  <div class="span1"></div>
+  <div class="span5">
+    <h3 class="color">Contacte a nuestros equipo</h3>
+    <blockquote>
+      <p>Roberto Rodriguez - roberto@jungledynamics.com</p>
+      <p>Arnoldo Mora - arnoldo@jungledynamics.com</p>
+      <p>Juan Muñoz - juan@jungledynamics.com</p>
+    </blockquote>
+  </div>
+</div>
