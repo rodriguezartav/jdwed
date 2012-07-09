@@ -14,8 +14,8 @@
     
     <li class="nav-header">Twitter</li>
     <li class="divider"></li>
-    <li><a href="/sessions/twitter/login?lastView=hack-a-day">
-      <span class="btn btn-info">Tweet</span></a>
+    <li>
+      Pronto...
     </li>
 
     <li class="nav-header">Facebook</li>

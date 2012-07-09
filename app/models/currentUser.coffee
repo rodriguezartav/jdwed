@@ -1,7 +1,7 @@
 Spine = require('spine')
 
 class CurrentUser extends Spine.Model
-  @configure 'CurrentUser' , "username" , "email" , "authData" , "createdAt" , "updatedAt" , "sessionToken" , "categories" , "details"
+  @configure 'CurrentUser' , "username" , "email" , "authData" , "createdAt" , "updatedAt" , "sessionToken" , "categories" , "status" , "description"
   @extend Spine.Model.Ajax.Methods
 
   @url = "https://api.parse.com/1/users"  
@@ -31,9 +31,15 @@ class CurrentUser extends Spine.Model
     CurrentUser.destroyAll()
     CurrentUser.trigger "currentUserSet" , null
 
-  @parseDetails: (authData) =>
-    @details = if authData.twitter then authData.twitter.details else {}
-    @details.save()
+  @fromAuthData: (authData) ->
+    user = null
+    if authData.twitter
+      username     =  authData.twitter.screen_name
+      status       =  authData.twitter.details.status.text
+      description  =  authData.twitter.details.description
+      delete authData.twitter.details
+      user = CurrentUser.create authData: authData , username: username , status: status, description: description
+    user
 
   @fromJSON: (objects) ->
     return unless objects

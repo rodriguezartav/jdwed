@@ -19,15 +19,15 @@ class UserRegistrationModal extends Spine.Controller
   events:
     "click .cancel"      :   "onClose"
     "click .accept"      :   "onTwitterSubmit"
-    "click .badge"  :   "onCategoriasClick"
+    "click .badge"       :   "onCategoriasClick"
 
   constructor: ->
     super
 
     if @data.action == "create"
       @html require("views/modals/userRegistration/working")(@data.authData)
-      username = @data.authData.twitter.screen_name if @data.authData.twitter
-      user = CurrentUser.create authData: @data.authData , username: username 
+      console.log @data.authData.twitter.details
+      user = CurrentUser.fromAuthData(@data.authData)
       user.ajax().create {}, { success: @onCreateSuccess  } 
     else if @data.action == "edit"
       @render()
@@ -53,6 +53,8 @@ class UserRegistrationModal extends Spine.Controller
     else
       badge.addClass "active"
 
+
+
   onTwitterSubmit: =>
     try
       @updateFromView(Spine.user,@inputs_to_validate)
@@ -62,7 +64,6 @@ class UserRegistrationModal extends Spine.Controller
         categories.push $(badge).attr "data-value"
 
       Spine.user.categories = categories
-      Spine.user.details = Spine.user.authData.twitter.details
       Spine.user.save()
       Spine.user.ajax().update( {} , { success: @onUpdateSuccess , error: @onUpdateError }  )   
       @alert.html "Se han guardado los cambios"
@@ -70,6 +71,8 @@ class UserRegistrationModal extends Spine.Controller
     catch err
       @alert.addClass "alert-error"
       @alert.html require("views/errors/validationError")(err)
+
+
 
   onUpdateSuccess: ->
     Spine.trigger "hide_modal"

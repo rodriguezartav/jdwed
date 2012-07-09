@@ -22,7 +22,14 @@
     <div class="control-group">
       <label for="input01" class="control-label">Email</label>
       <div class="controls">
-        <input type="email" value="<%= @email %>" data-type="email" data-numeric="false" required="required" class=" txtEmail validatable  autofocus="autofocus" /">
+        <input type="email" value="<%= @email %>" data-type="email" data-numeric="false" required="required" class=" txtEmail validatable  autofocus="autofocus" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="input01" class="control-label">Status</label>
+      <div class="controls">
+        <textarea style="height:55px;width:345px;" type="text" data-type="status" data-numeric="false" required="required" class="  validatable"  ><%= @description %></textarea>
       </div>
     </div>
 
