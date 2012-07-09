@@ -35,136 +35,17 @@ html(lang="en")
       var exports = this;
       jQuery(function(){
         var App = require("index");
-        exports.app = new App({el: $("body")});      
+        exports.app = new App({el: $("body") , authData: !{authData} });      
       });
 
   body
-    .navbar.header
-      .navbar-inner
-        .container.top
-          .logo
-            h3 Jungle Dynamics
-          ul.secondaryLinks.pull-right
-            li
-              a Jungle Dynamics
-        
-        .container.links           
-          ul.primaryLinks
-            li.link
-              a.dropdown-toggle(href="/") Inicio
-              i.icon-bolt(style="font-size: 150px;top: -10px;right: -30px;")
-          
-            li.dropdown.link(data-subnav="hackaday")
-              a Hack-a-Day
-                i.icon-caret-down
-              i.icon-tasks
-            
-            li.dropdown.link(data-subnav="apps")
-              a.dropdown-toggle CRNews
-              i.icon-globe
-  
-            li.dropdown.link(data-subnav="apps")
-              a.dropdown-toggle Cloud Apps
-              i.icon-cloud       
-              
-                 
-            li.dropdown.link(data-subnav="aboutus")
-              a.dropdown-toggle About Us
-              i.icon-map-marker
-          
-            li.dropdown.link(data-subnav="contacto")
-              a.dropdown-toggle Contacto
-              i.icon-envelope
-
-          .subnav.hackaday
-            .row-fluid.buttons
-              a.span3(href="/hack-a-day")
-                i.icon-book
-                h2 Info
-              a.span3(href="/hack-a-day/preparese")
-                i.icon-beaker
-                h2 Pre-Paracion
-              a.span3(href="/hack-a-day/app")
-                i.icon-th-list
-                h2 Sobre el App
+    !=partial('components/header')
 
 
-          .subnav.apps
-            .row-fluid.layout
-              .row-fluid
-                .span6
-                   h2 We'll build an App for That
-
-                   blockquote
-                     p
-                       | "This section will be live soon :)"
-
-
-
-
-          .subnav.contacto.contactFormWrapper
-            .row-fluid.layout
-              .span5
-                form.form-horizontal.contactForm(name="contactForm")
-                  fieldset
-                    legend A veces respondemos :)
-                    p
-                      small (todos los campos son requeridos)
-                      .control-group
-                        label.control-label(for="input01") Su Nombre
-                        .controls
-                          input.span12.txtName(type="text")
-                        
-                      .control-group
-                        label.control-label(for="input01") Su Email
-                        .controls
-                          input.span12.txtEmail(type="email")
-                      
-                      .control-group
-                        label.control-label(for="input01") Cuentenos
-                        .controls
-                          textarea.span12.txtMessage(type="text")
-
-                      button.btn.pull-right.btn-success(type="submit") Enviar
-                      
-                      
-                      
-              .span1
-              .span5
-                 h3.color Contacte a nuestros equipo
-
-                 blockquote
-                  p Roberto Rodriguez - roberto@jungledynamics.com
-                  p Arnoldo Mora - arnoldo@jungledynamics.com
-                  p Juan Muñoz - juan@jungledynamics.com
-
-                
-
-          .subnav.aboutus
-            .row-fluid.layout
-              .span5
-                 h2 Jungle Dynamics Inc
-
-                 blockquote
-                   p
-                     | "Jungle Dynamics es una empresa dedicada a fomentar el emprendedurismo, la innovación, la transferencia de conocimiento y, sobre todo, la aplicación de estos para la ideación y ejecución de soluciones." 
-                 
-                
-              .span1
-              .span5
-                 h3.color Contacte a nuestros equipo
-               
-                 blockquote
-                  p Roberto Rodriguez - roberto@jungledynamics.com
-                  p Arnoldo Mora - arnoldo@jungledynamics.com
-                  p Juan Muñoz - juan@jungledynamics.com
-
-
-          
-
-
-    != body
+    .app
+      != body
+      
     
-    
+    .navbar.navbar-fixed-bottom.socialBar
 
       

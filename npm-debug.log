@@ -1,0 +1,32 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'info', 'rivets' ]
+2 info using npm@1.1.33
+3 info using node@v0.8.1
+4 verbose config file /Users/roberto/.npmrc
+5 verbose config file /usr/local/etc/npmrc
+6 verbose config file /usr/local/lib/node_modules/npm/npmrc
+7 verbose url raw rivets
+8 verbose url resolving [ 'https://registry.npmjs.org/', './rivets' ]
+9 verbose url resolved https://registry.npmjs.org/rivets
+10 info retry registry request attempt 1 at 20:57:41
+11 http GET https://registry.npmjs.org/rivets
+12 http 404 https://registry.npmjs.org/rivets
+13 silly registry.get cb [ 404,
+13 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+13 silly registry.get     date: 'Mon, 09 Jul 2012 02:57:42 GMT',
+13 silly registry.get     'content-type': 'application/json',
+13 silly registry.get     'content-length': '52',
+13 silly registry.get     'cache-control': 'must-revalidate' } ]
+14 error 404 'rivets' is not in the npm registry.
+14 error 404 You should bug the author to publish it
+14 error 404
+14 error 404 Note that you can also install from a
+14 error 404 tarball, folder, or http url, or git url.
+15 error System Darwin 11.3.0
+16 error command "node" "/usr/local/bin/npm" "info" "rivets"
+17 error cwd /Users/roberto/Proyectos/jungledynamics/web2
+18 error node -v v0.8.1
+19 error npm -v 1.1.33
+20 error code E404
+21 error message 404 Not Found: rivets
+22 verbose exit [ 1, true ]

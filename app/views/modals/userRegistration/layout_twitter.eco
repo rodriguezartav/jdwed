@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h3><i class="icon-twitter"></i> Completa tu Perfil</h3>
+</div>
+
+<div class="modal-body">
+  <form class="form-horizontal twitterform">    
+
+    <div class="control-group">
+      <label for="input01" class="control-label">Foto</label>
+      <div class="controls">
+        <img style="width:25px; height: 25px;" class="userImage" src="http://res.cloudinary.com/2u5l6bvw/image/twitter_name/w_20,h_20,c_fill/<%= @authData.twitter.screen_name %>.jpg">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="input01" class="control-label">Usuario</label>
+      <div class="controls">
+        <h4><%= @authData.twitter.screen_name %></h4>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <label for="input01" class="control-label">Email</label>
+      <div class="controls">
+        <input type="email" value="<%= @email %>" data-type="email" data-numeric="false" required="required" class=" txtEmail validatable  autofocus="autofocus" /">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="inlineCheckboxes">Categorias</label>
+      <div class="controls">
+        <span data-value="emprendedor" class="badge check">Emprendedor</span>
+        <span data-value="hacker"      class="badge check">Hacker</span>
+        <span data-value="disenador"   class="badge check">Diseñador</span>
+        <span data-value="publicista"  class="badge check">Publicista Medios</span>
+        <span data-value="periodista"  class="badge check">periodista</span>
+      </div>
+    </div>
+
+    </div>
+
+    <p class="alert"><small>(todos los campos son requeridos)</small></p>  
+  </form>
+</div>
+
+<div class="modal-footer">
+  <a class="btn btn-primary accept">Guardar</a>
+  <a class="btn btn pull-left cancel">Cancelar</a>
+</div>
+
+
+
+
+

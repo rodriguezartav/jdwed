@@ -1,37 +1,28 @@
 Spine = require('spine')
+Contact = require('models/contact')
 
 class ContactForm extends Spine.Controller
+  @extend Spine.Controller.ViewDelegation
 
   events:
     "submit form.contactForm"  : "onSubmit"
 
   elements:
-    ".txtEmail"      : "txtEmail"
-    ".txtName"       : "txtName"
-    ".txtMessage"    : "txtMessage"
-    ".errorMessage"  : "errorMessage"
+    ".validatable" : "inputs_to_validate"
+    ".alert"       : "alert"
 
   constructor: ->
     super
 
-  validate: ->
-    
-
-
   onSubmit: (e) =>
     e.preventDefault()
+    contact = {}
+    try
+      @updateFromView(contact,@inputs_to_validate)
+      Contact.create contact
+      @html require("views/contactForm/afterSend")
+    catch err
+      @alert.addClass "alert-error"
+      @alert.html require("views/errors/validationError")(err)
 
-    post = $.post "/form" , message: @txtMessage.val() , name: @txtName.val() ,  email: @txtEmail.val()
-
-    #post.success -> 
-      #alert("second success")
-      
-    #post.error ->
-      #alert("error")
-
-    
-    @html require("views/contactForm/afterSend")
-        
-  
-    
 module.exports = ContactForm

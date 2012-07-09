@@ -1,0 +1,4 @@
+<h4><%= @type %></h4>
+<% for error in @errors:  %>
+  <p><%= error  %></p>
+<% end %>

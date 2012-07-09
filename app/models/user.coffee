@@ -1,11 +1,15 @@
 Spine = require('spine')
 
-class Contact extends Spine.Model
-  @configure 'Contact' , "name" , "email" , "message" , "createdAt" , "updatedAt"
+class User extends Spine.Model
+  @configure 'User' , "username" , "email" , "createdAt"
   @extend Spine.Model.Ajax
-  
-  @url = "https://api.parse.com/1/classes/Contact"
-  
+
+  @url = "https://api.parse.com/1/users"  
+
+  @fetch: (params = {}) ->
+    params or= {data: 'where={"username":"params.username"}' } if params.username
+    super(params)
+
   @fromJSON: (objects) ->
     return unless objects
 
@@ -19,19 +23,14 @@ class Contact extends Spine.Model
         if object.objectId
           object.id = object.objectId
           delete object.objectId
-          delete object.cId
-          
-        
       (new @(value) for value in objects)
     else
       objects.id = objects.objectId if objects.objectId
       new @(objects)
 
-  toJSON: (objects) ->
+  toJSON: () ->
     atts = this.attributes();
-    atts.objectId = atts.id if atts.objectId
-    delete atts.id;
     return atts;
 
   
-module.exports = Contact
+module.exports = User

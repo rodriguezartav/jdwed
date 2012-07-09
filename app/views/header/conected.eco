@@ -1,0 +1,37 @@
+<% Spine = require("spine")  %>
+
+<li class="dropdown perfil">
+  <a data-toggle="dropdown" class="dropdown-toggle conected">
+  <span>Tu Perfil </span>
+  <img style="width:25px; height: 25px;" class="userImage" src="http://res.cloudinary.com/2u5l6bvw/image/twitter_name/w_20,h_20,c_fill/<%= Spine.user.username %>.jpg"/><b class="caret"></b></a>
+
+  <ul class="dropdown-menu">
+    <li>
+      <a class="edit">
+        Editar
+      </a>
+    </li>
+    
+    <li class="nav-header">Twitter</li>
+    <li class="divider"></li>
+    <li><a href="/sessions/twitter/login?lastView=hack-a-day">
+      <span class="btn btn-info">Tweet</span></a>
+    </li>
+
+    <li class="nav-header">Facebook</li>
+    <li>
+
+        Pronto...
+
+    </li>
+    
+    <li>
+      <a class="logout">
+        Logout
+      </a>
+    </li>
+    
+    
+  </ul>
+
+</li>

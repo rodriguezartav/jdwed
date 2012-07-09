@@ -4,7 +4,6 @@ require('jqueryify')
 
 require('spine')
 require('spine/lib/local')
-require('spine/lib/ajax')
 require('spine/lib/route')
 
 
@@ -17,3 +16,11 @@ require('./bootstrap/bootstrap-modal')
 #require('./bootstrap/bootstrap-type-ahead')
 require('./bootstrap/bootstrap-button')
 #require('./bootstrap/bootstrap-collapse')
+
+require('./modal')
+require('./modalController')
+
+require('./singleModel')
+require('./parse')
+require('./viewDelegation')
+

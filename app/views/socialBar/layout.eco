@@ -1,0 +1,11 @@
+<div class="container">
+<form class="pull-right" action="">
+  <i class="icon-chevron-right bright"></i>
+  <input type="text" class="span2" placeholder="Directorio">
+  <i class="icon-off"></i>
+</form>
+
+  <ul class="users unstyled">
+    <li class="title"><span>The Social Bar</span></li>
+  </ul>
+</div>

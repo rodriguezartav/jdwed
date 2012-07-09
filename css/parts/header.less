@@ -1,7 +1,7 @@
 .header{
 
   .top{
-    padding-top: 20px;
+    padding: 7px 0px 0px 0px;
     .logo{
       display: inline-block;
       h3{
@@ -13,18 +13,62 @@
         text-shadow: 0 1px 1px rgba(33,33,33,0.1);
       }
     }
-    ul.secondaryLinks{
-      display: inline-block;
-      li{
-        display: inline-block;
-        margin-right: 8px;
-        a{
+    
+    .perfil{
+      vertical-align: middle;
+      cursor: pointer;
+      margin-right: 5px;
+      >a{
+        border: 1px solid #fff;
+        padding: 5px;
+        span{
+          font-size: 20px;
+          vertical-align: middle;
+          font-weight: 200;
         }
-        &.divider{
-          margin-left: 8px;
-          border-left: 1px solid @blue;
+        img{
+          margin-right: 2px;
+        }
+        i{
+          color: @green;
+          font-size: 25px;
+          vertical-align: middle;
+        }
+        &:hover{
+          background: none;
+          border: 1px dashed #efefef;
+          i{
+            color: @orange;
+          }
+        }
+        
+      }
+      .dropdown-menu {
+        li{
+          text-align: center;
+          &:hover{
+            background: none;
+          }
+        }
+        a{
+          &.inline{
+            display: inline-block;
+            span{
+              font-size: 12px;
+            } 
+          }
+          &:hover{
+             background: none;
+           }  
+
         }
       }
+    }
+
+    .conected{}
+    
+    ul.secondaryLinks{
+      display: inline-block;
     }
   }  
 
@@ -76,11 +120,12 @@
       }
       
       .layout{
-        padding: 0px 15px 15px 15px;
-        
-        
-        
+        padding: 0px 15px 0px 15px;
+        form{
+          margin: 0px;
+        }
       }
+      
       
     }
     

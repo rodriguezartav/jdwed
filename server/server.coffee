@@ -10,6 +10,8 @@ app = express.createServer()
 app.use express.logger()
 app.use express.bodyParser()
 app.use express.cookieParser()
+app.use express.session secret: "1.6km is a mile"
+
 app.set 'view engine'  , 'jade'
 app.set 'views' , './views'
 
