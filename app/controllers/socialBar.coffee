@@ -13,5 +13,6 @@ class SocialBar extends Spine.Controller
     User.bind "refresh" , =>
       for user in User.all()
         @el.find(".users").append require("views/socialBar/user")(user)
+        @el.find(".popable").popover({})
   
 module.exports = SocialBar

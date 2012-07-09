@@ -53,8 +53,6 @@ class UserRegistrationModal extends Spine.Controller
     else
       badge.addClass "active"
 
-
-
   onTwitterSubmit: =>
     try
       @updateFromView(Spine.user,@inputs_to_validate)
@@ -71,8 +69,6 @@ class UserRegistrationModal extends Spine.Controller
     catch err
       @alert.addClass "alert-error"
       @alert.html require("views/errors/validationError")(err)
-
-
 
   onUpdateSuccess: ->
     Spine.trigger "hide_modal"

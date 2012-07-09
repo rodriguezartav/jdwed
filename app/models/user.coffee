@@ -1,7 +1,7 @@
 Spine = require('spine')
 
 class User extends Spine.Model
-  @configure 'User' , "username" , "email" , "createdAt"
+  @configure 'User' , "username" , "email" , "createdAt" , "categories" , "status", "description"
   @extend Spine.Model.Ajax
 
   @url = "https://api.parse.com/1/users"  

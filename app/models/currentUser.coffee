@@ -66,7 +66,7 @@ class CurrentUser extends Spine.Model
     data = 
       email       :  @email
       id          :  @id
-      categorias  :  @categorias
+      categories  :  @categories
       details     :  @details
     data
     

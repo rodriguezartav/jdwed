@@ -4,24 +4,27 @@
     <i class="icon-off"></i>
     <b class="caret"></b>
   </a>
- <ul class="dropdown-menu">
-  <li class="nav-header" style="width: 200px;">Utiliza un Perfil Existente</li>
-  <li class="divider"></li>
-  <li>
-    <a href="/sessions/twitter/login?lastView=<%= window.location.pathname %>" class="inline"><span class="btn btn-info  "><i class="icon-twitter"></i>Twitter</span></a>
-    <a href="/sessions/facebook/login?lastView=<%= window.location.pathname %>" class="inline"><span  class="btn btn-primary  "><i class="icon-facebook"></i>Facebook</span></a>
-  </li>
-  <li>
+  <ul class="dropdown-menu">
+    <li class="nav-header" style="width: 200px;">Utiliza un Perfil Existente</li>
+    <li class="divider"></li>
+    <li>
+      <a href="/sessions/twitter/login?lastView=<%= window.location.pathname %>" class="inline"><span class="btn btn-info  "><i class="icon-twitter"></i>Twitter</span></a>
+      <a href="/sessions/facebook/login?lastView=<%= window.location.pathname %>" class="inline"><span  class="btn btn-primary  "><i class="icon-facebook"></i>Facebook</span></a>
+    </li>
+    <li>
     
-    <h6>
-      <a class="inline register">Registro con Email</a>
-    </h6>
+      <h6>
+        <a class="inline register">Registro con Email</a>
+      </h6>
     
-    <h6>
-      <a class="inline login">Login con Email</a>
-    </h6>
+      <h6>
+        <a class="inline login">Login con Email</a>
+      </h6>
     
-  </li>
+    </li>
+  </ul>
 </li>
 
-<li><span href="#" class="badge popable" rel="popover" data-content="&lt;h4&gt;Un directorio de los mas 'galleta'&lt;/h4&gt;&lt;p&gt;En Jungle Dynamics buscamos continuamente a las personas sobresalen;&lt;/p&gt;&lt;h3&gt;Puedes cambiar el mundo?&lt;/h3&gt;" data-original-title="Que es un Perfil">?</span></li>
+<li>
+  <span href="#" class="badge popable" rel="popover" data-content="&lt;h4&gt;Un directorio de los mas 'galleta'&lt;/h4&gt;&lt;p&gt;En Jungle Dynamics buscamos continuamente a las personas sobresalen;&lt;/p&gt;&lt;h3&gt;Puedes cambiar el mundo?&lt;/h3&gt;" data-original-title="Que es un Perfil">?</span>
+</li>
