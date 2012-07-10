@@ -2121,7 +2121,7 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 }
 .header .top .logo h3 { color: #8fae5a; font-size: 44px; line-height: 60px; font-weight: 500; margin-bottom: 10px; text-shadow: 0 1px 1px rgba(33, 33, 33, 0.1);
 }
-.header .top .secondaryLinks li { display: inline-block;
+.header .top .secondaryLinks > li { display: inline-block;
 }
 .header .top .perfil { vertical-align: middle; cursor: pointer; margin-right: 5px;
 }

@@ -2,6 +2,15 @@ nodemailer = require("nodemailer");
 
 class Emailer
 
+  constructor: (@app) ->
+    @setupRoutes()
+
+  setupRoutes:  =>
+
+    @app.post "/tools/sendEmail" , (req, res) =>
+      
+
+
   #create reusable transport method (opens pool of SMTP connections)
   @createTransport: =>
     @smtpTransport = nodemailer.createTransport "SMTP", 

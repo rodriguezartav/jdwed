@@ -3,6 +3,8 @@ Spine = require('spine')
 
 #modals
 UserRegistrationModal = require("controllers/modals/userRegistration")
+PrivateMessageModal   = require("controllers/modals/privateMessage")
+
 
 Header = require('controllers/header')
 ContactForm = require('controllers/contactForm')
