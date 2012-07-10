@@ -6,7 +6,7 @@ class Routes
   constructor: (@app) ->    
     @setupRoutes()
     @twitterController = new TwitterController(@app)
-    @kaiseki = new Kaiseki(process.env.PARSE_APP_ID, process.env.PARSE.REST_API_KEY);
+    #@kaiseki = new Kaiseki(process.env.PARSE_APP_ID, process.env.PARSE.REST_API_KEY);
 
   setupRoutes: ->
    #ROUTES GO HERE
