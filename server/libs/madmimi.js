@@ -2,7 +2,7 @@ var https = require('https'),
     http = require('http'),
     querystring = require('querystring'),
     xml2js = require('xml2js'),
-    jade = require('Jade');
+    jade = require('jade');
 
 
 var Madmimi = module.exports = function (username, api_key, debug) {
