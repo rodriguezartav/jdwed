@@ -1865,7 +1865,7 @@ input[type="submit"].btn.btn-mini { *padding-top: 1px; *padding-bottom: 1px;
 }
 .modal-open .dropdown.open { *z-index: 2050;
 }
-.modal-open .popover { z-index: 2060;
+.modal-open .popover { z-index: 2110;
 }
 .modal-open .tooltip { z-index: 2070;
 }
@@ -1925,7 +1925,7 @@ input[type="submit"].btn.btn-mini { *padding-top: 1px; *padding-bottom: 1px;
 }
 .tooltip-arrow { position: absolute; width: 0; height: 0;
 }
-.popover { position: absolute; top: 0; left: 0; z-index: 1010; display: none; padding: 5px;
+.popover { position: absolute; top: 0; left: 0; z-index: 1060; display: none; padding: 5px;
 }
 .popover.top { margin-top: -5px;
 }
@@ -2263,6 +2263,12 @@ a.badge:hover { color: #ffffff; text-decoration: none; cursor: pointer;
 .badge.check { font-size: 13px; cursor: pointer; padding: 4px 8px; text-transform: capitalize; margin: 4px 2px; display: inline-block;
 }
 .badge.active { background-color: #f89406;
+}
+.modal:not(.waiting) .onWaiting { display: none;
+}
+.modal.waiting .onWaiting { display: block;
+}
+.modal.waiting .offWaiting { display: none;
 }
 .splash { margin-bottom: 20px;
 }

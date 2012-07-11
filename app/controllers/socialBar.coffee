@@ -8,6 +8,8 @@ class SocialBar extends Spine.Controller
   
   events:
     "click .sendPM" : "onClickSendPM"
+    "click .showFriends" : "onClickShowFriends"
+    
 
   constructor: ->
     super
@@ -19,13 +21,27 @@ class SocialBar extends Spine.Controller
         @el.find(".popable").popover({})
 
   onClickSendPM: (e) ->
-    
     target = $(e.target)
     target = target.parents('span') if !target.hasClass "sendPM"
     id = target.attr "data-id"
     user = User.find id
-    Spine.trigger "show_modal" , "privateMessage" , user: user
-    
+    console.log user.email
+    if user.email
+      Spine.trigger "show_modal" , "privateMessage" , user: user    
+    else
+      alert "Lo sentimos el usuario no tiene email registrado"
+
+
+  onClickShowFriends: (e) ->
+    target = $(e.target)
+    target = target.parents('span') if !target.hasClass "showFriends"
+    id = target.attr "data-id"
+    user = User.find id
+    console.log user.email
+    if user.email
+      Spine.trigger "show_modal" , "showFriends" , user: user    
+    else
+      alert "Lo sentimos el usuario no tiene email registrado"
     
     
 

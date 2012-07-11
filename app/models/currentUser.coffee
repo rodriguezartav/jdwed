@@ -1,7 +1,9 @@
 Spine = require('spine')
 
 class CurrentUser extends Spine.Model
-  @configure 'CurrentUser' , "username" , "email" , "authData" , "createdAt" , "updatedAt" , "sessionToken" , "categories" , "status" , "description"
+  @configure 'CurrentUser' , "username" , "email" , "authData" , "createdAt" , "updatedAt" , "sessionToken" , 
+  "categories" , "status" , "description" , "providers"
+
   @extend Spine.Model.Ajax.Methods
 
   @url = "https://api.parse.com/1/users"  
@@ -58,6 +60,9 @@ class CurrentUser extends Spine.Model
     else
       objects.id = objects.objectId if objects.objectId
       new @(objects)
+
+  setProviders: ->
+    @providers = if @authData.twitter then "twitter"
 
   provider: ->
     return if @authData.twitter then "twitter" else "facebook"

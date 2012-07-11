@@ -61,6 +61,7 @@ class UserRegistrationModal extends Spine.Controller
       for badge in badges
         categories.push $(badge).attr "data-value"
 
+      Spine.user.setProviders()
       Spine.user.categories = categories
       Spine.user.save()
       Spine.user.ajax().update( {} , { success: @onUpdateSuccess , error: @onUpdateError }  )   

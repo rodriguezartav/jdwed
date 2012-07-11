@@ -18,18 +18,23 @@
     <div class="control-group">
       <label for="input01" class="control-label">Mensaje</label>
       <div class="controls">
-        <textarea style="height:75px;width:345px;" type="text" data-type="status" data-numeric="false" required="required" class="  validatable"  ></textarea>
+        <textarea style="height:75px;width:345px;" type="text" data-type="status" data-numeric="false" required="required" class="  validatable txtBody"  ></textarea>
       </div>
     </div>
 
     
     <p class="alert"><small>(todos los campos son requeridos)</small></p>  
   </form>
+  
+  <div class="progress progress-striped progree-success active onWaiting">
+    <div class="bar" style="width: 100%;"></div>
+  </div>
+  
 </div>
 
 <div class="modal-footer">
-  <a class="btn btn-primary accept">Enviar</a>
-  <a class="btn btn pull-left cancel">Cancelar</a>
+  <a class="btn btn-primary send offWaiting">Enviar</a>
+  <a class="btn btn pull-left cancel offWaiting">Cancelar</a>
 </div>
 
 

@@ -1,0 +1,15 @@
+.modal{
+  &:not(.waiting){
+    .onWaiting{
+      display: none;
+    }
+  }
+  &.waiting{
+    .onWaiting{
+      display: block;
+    }
+    .offWaiting{
+      display: none;
+    }
+  }
+}

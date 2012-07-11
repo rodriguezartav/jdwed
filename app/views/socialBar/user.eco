@@ -10,6 +10,9 @@
     <li class="socialContext">
       <div class="buttonBar">
         <span data-id="<%= @id  %>" data-placement="right" rel="popover" data-content="Mandele a <%= @username %> un Mensaje Privado" data-original-title="Mensaje Privado" class="btn btn-success popable sendPM"><i class="icon-envelope"></i></span>
+        
+        <span data-id="<%= @id  %>" data-placement="right" rel="popover" data-content="Los amigos de <%= @username %>" data-original-title="Amigos :)" class="btn btn-success popable showFriends"><i class="icon-twitter"></i></span>
+        
       </div>
       
       <div class="row-fluid">

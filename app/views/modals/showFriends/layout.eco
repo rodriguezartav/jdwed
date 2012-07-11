@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h3>Sus Amigos</h3>
+</div>
+
+<div class="modal-body">
+  <ul class="nav nav-pills">
+  </ul>
+  <div class="progress progress-striped active onWaiting">
+    <div class="bar" style="width: 98%;"></div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <a class="btn pull-left close">Cerrar</a>
+</div>
+
+
+
+
+

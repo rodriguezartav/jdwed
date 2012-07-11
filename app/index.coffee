@@ -4,6 +4,7 @@ Spine = require('spine')
 #modals
 UserRegistrationModal = require("controllers/modals/userRegistration")
 PrivateMessageModal   = require("controllers/modals/privateMessage")
+ShowFriendsModal   = require("controllers/modals/showFriends")
 
 
 Header = require('controllers/header')
@@ -36,7 +37,9 @@ class App extends Spine.Controller
       CurrentUser.logout()
       Spine.trigger "show_modal" , "userRegistration" , action: "create" , authData: @authData
 
-    User.fetch()
+    if @users
+      users = @users
+    User.refresh(users)
 
     $('.popable').popover({placement: "bottom"})
 

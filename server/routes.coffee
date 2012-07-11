@@ -1,38 +1,51 @@
-Emailer = require("./emailer");
-TwitterController = require('./twitterController')
+
 
 class Routes
 
   constructor: (@app) ->    
+    @app.use @middleware()
     @setupRoutes()
-    @twitterController = new TwitterController(@app)
-    #@kaiseki = new Kaiseki(process.env.PARSE_APP_ID, process.env.PARSE.REST_API_KEY);
+
+  middleware: =>
+    #load users before hand
+    return (req,res,next)  =>
+      return next() if req.method != "GET"
+      req.parseController.kaiseki.getUsers (err, res, body) -> 
+        req.users = body
+        next()
 
   setupRoutes: ->
    #ROUTES GO HERE
     @app.get "/", (req,res) ->
       auth = req.session.authData  || null
       req.session.authData = null
-      res.render "index" , { authData: JSON.stringify(auth) }
+      res.render "index" , { authData: JSON.stringify(auth) , users: JSON.stringify(req.users) }
 
-    @app.get "/hack-a-day", (req,res) ->
+    @app.get "/hack-a-day/:template?", (req,res) ->
       auth = req.session.authData || null
       req.session.authData = null
-      template = "hackaday"
-      res.render template , { authData: JSON.stringify(auth) }
+      template = req.params.template or "hackaday"
+      res.render template , { authData: JSON.stringify(auth) , users: JSON.stringify(req.users) }
 
-    @app.get "/hack-a-day/:template", (req,res) ->
-      auth = req.session.authData || null
-      req.session.authData = null
-      template = req.params.template
-      res.render template , { authData: JSON.stringify(auth) }
-
-    @app.post "/form" , (req,res) ->
-      message = req.param 'message'
-      name = req.param 'name'
-      email = req.param 'email'
-      Emailer.sendMail( 'Nombre:' + name + ' Email: ' + email + ' Mensaje: ' + message )
-      res.send('{"response": "ok"}')
+    @app.post "/email/send", (req,res) ->
+      req.emailController.sendEmail "#{req.body.name} <#{req.body.email}>" , "#{req.body.subject}" , req.body.template , req.body.text ,  ->
+        res.send(200,'')
+     
+    @app.post "/social/getFriends" , (req,res) ->
+      req.twitterController.getFriendIDs req.body.user , req , (err,data,response) ->
+        res(500,err) if err
+        ids = data.ids
+        if ids.length > 50
+          start = req.body.offset or 0
+          end = start + 50
+          ids = ids.splice(start , end)
+        
+        req.twitterController.getUsers ids , req , ( err , data , response) ->
+          res(500,err) if err
+          results = []
+          for dat in data
+            results.push id: dat.id , name: dat.name , screen_name: dat.screen_name , description: dat.description
+          res.send(results)
 
 module.exports = Routes
    

@@ -1,0 +1,9 @@
+<li data-id="<%= @id %>" data-name="<%= @name %>"  >
+  <a class="popable" rel="popover" data-content="<h4>@<%= @screen_name %></h4> <p><%= @description %><p> " data-original-title="<%= @name %>">
+  <% if @name == "more":  %>
+    <i class="icon_ok more" style="font-size: 40px;"></i>
+  <% else:  %>  
+    <img class='thumbnail' src='http://res.cloudinary.com/2u5l6bvw/image/twitter_name/w_30,h_30,c_fill/<%= @screen_name %>.jpg' />
+  <% end  %>
+  </a>
+</li>
