@@ -4,7 +4,6 @@ var https = require('https'),
     xml2js = require('xml2js'),
     jade = require('jade');
 
-
 var Madmimi = module.exports = function (username, api_key, debug) {
 
   if (debug) {
