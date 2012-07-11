@@ -1,5 +1,3 @@
-sys     = require 'sys'
-
 
 class Routes
 
@@ -12,7 +10,6 @@ class Routes
     return (req,res,next)  =>
       return next() if req.method != "GET"
       req.parseController.kaiseki.getUsers (err, res, body) -> 
-        console.log sys.inspect(err)
         req.users = body
         next()
 
