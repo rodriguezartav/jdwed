@@ -61,13 +61,15 @@ class Base
 class Collection extends Base
   constructor: (@model) ->
 
-  custom: (url, method, params) ->
-     @ajax(
-       params,
-       type: method,
-       url:  url
-     ).success(@customResponse)
-      .error(@errorResponse)
+  custom: ( method , params , options) ->
+    url = params.url || Ajax.getURL(@model)
+    params.data = JSON.stringify(params.data) if params.data and typeof params.data  is "object"
+    @ajax(
+      params,
+      type: method,
+      url: url
+    ).success( @customResponse(options) )
+    .error( @customErrorResponse(options) )
 
   find: (id, params) ->
     record = new @model(id: id)
@@ -97,8 +99,11 @@ class Collection extends Base
 
   # Private
 
-  customResponse: (data, status, xhr) =>
-    @model.trigger('customAjaxSuccess', null, status, xhr)
+  customResponse: (options = {}) =>
+    (data, status, xhr) =>
+      @model = Spine if !@model # to allow external access
+      @model.trigger('customAjaxSuccess', data, status, xhr)
+      options.success?.apply( @model, [data])
 
   recordsResponse: (data, status, xhr) =>
     @model.trigger('ajaxSuccess', null, status, xhr)
@@ -106,18 +111,15 @@ class Collection extends Base
   errorResponse: (xhr, statusText, error) =>
     @model.trigger('ajaxError', null, xhr, statusText, error)
 
+  customErrorResponse: (options = {}) =>
+    (xhr, statusText, error) =>
+      @model = Spine if !@model # to allow external access
+      @model.trigger('ajaxError', xhr, statusText, error)
+      options.error?.apply(@model , [xhr, statusText, error] )
+
 class Singleton extends Base
   constructor: (@record) ->
     @model = @record.constructor
-
-  custom: (url, method, params ) ->
-   @queue =>
-     @ajax(
-       params,
-       type: method,
-       url:  url,
-     ).success(@customResponse)
-      .error(@errorResponse)
 
   reload: (params, options) ->
     @queue =>
@@ -160,12 +162,6 @@ class Singleton extends Base
        .error(@errorResponse(options))
 
   # Private
-
-  customResponse: (options = {}) =>
-    (data, status, xhr) =>
-      @record.trigger('customAjaxSuccess', data, status, xhr)
-      options.error?.apply(@record)
-
 
   recordResponse: (options = {}) =>
     (data, status, xhr) =>
@@ -237,4 +233,5 @@ Model.Ajax.Methods =
 # Globals
 Ajax.defaults   = Base::defaults
 Spine.Ajax      = Ajax
+Spine.AjaxUtil = new Collection()
 module?.exports = Ajax

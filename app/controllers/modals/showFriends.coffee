@@ -24,19 +24,22 @@ class ShowFriends extends Spine.Controller
   loadFriends: (offset=0) =>
     @lastOffset = offset
     
-    data=
-      user: @data.user.username
-      twitter: Spine.user.authData.twitter
-      offset: offset
+    params=
+      data:
+        user: @data.user.username
+        twitter: Spine.user.authData.twitter
+        offset: offset
+      url: "/social/getFriends"
 
-    post = $.post "/social/getFriends" , data
-   
+    Spine.AjaxUtil.custom("POST", params, success: @onSuccess , error: @onError)
+
     @el.addClass "waiting"
    
-    post.success (data) =>
-      @render(data)
-    
-    post.error (a,b,error) ->
+  onSuccess: (data) =>
+    @render(data)
+  
+  onError: (a,b,error) ->
+    console.log error
 
   render: (response) =>
     @el.removeClass "waiting"

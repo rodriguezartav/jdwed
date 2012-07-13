@@ -42,5 +42,14 @@ class App extends Spine.Controller
     User.refresh(users)
 
     $('.popable').popover({placement: "bottom"})
+        
+
+    
+  onSuccess: (data) ->
+    console.log data
+    
+  onError: ->
+    console.log arguments
+    
 
 module.exports = App
